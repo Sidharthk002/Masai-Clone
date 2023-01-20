@@ -1,0 +1,38 @@
+.nav{
+    border: 2px solid;
+    max-height: 100px;
+}
+
+.navul{
+    display: flex;
+}
+
+/* .text-decoration-none{
+    display: block;
+    padding: 0px 22px;
+    text-decoration: none;
+    color: #666666;
+    font-size: 12px;
+    font-family: Roboto,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left:'300px';
+    cursor:'pointer';
+    height:'20px'
+} */
+
+.hover-on-manubar .drop-down{
+    margin-top:46px;
+    border:2px solid ;
+    margin-left:-25px;
+    width: 150px;
+    display:none;
+    height: 120px;
+    background-color: #d7cfcf4f;
+}
+
+.hover-on-manubar:hover .drop-down {
+    display: block;
+    /* border: 1px solid black; */
+    /* border-radius: 5px; */
+    margin-top:50px;
+
+} 
