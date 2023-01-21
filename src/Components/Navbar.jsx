@@ -1,4 +1,3 @@
-
 import {
   Box,
   Flex,
@@ -15,21 +14,38 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+  Image,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Text,
+  Divider,
+  Spacer,
+  Icon,
+} from "@chakra-ui/react";
+import {
+  HamburgerIcon,
+  CloseIcon,
+  AddIcon,
+  SearchIcon,
+} from "@chakra-ui/icons";
+import { BsCart2, BsPhone } from "react-icons/bs";
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+// import {logo} from "../public/images/logo.png"
+
+const Links = ["Dashboard", "Projects", "Profile"];
 
 const NavLink = ({ children }) => (
   <Link
     px={2}
     py={1}
-    rounded={'md'}
+    rounded={"md"}
     _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      textDecoration: "none",
+      bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={'#'}>
+    href={"#"}
+  >
     {children}
   </Link>
 );
@@ -39,62 +55,118 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+      <Box
+        bg={useColorModeValue("white")}
+        px={{ base: "none", md: 4 }}
+        w={{ base: "100%" }}
+        margin={{ base: "0px" }}
+        p={"0px 30px"}
+        borderBottom={'1px'}
+        borderBottomColor={'gray.300'}
+        h={'80px'}
+      >
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
-            size={'md'}
+            size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
-            <HStack
-              as={'nav'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </HStack>
+          <HStack spacing={8} alignItems={"center"}>
+            <Image
+              src="/images/logo.png"
+              alt="logo"
+              w={{ base: "100px", sm: "120px" }}
+              ml={{ base: "25px", md: "1px", xl: "40px" }}
+            />
+            <Stack spacing={4}>
+              <InputGroup
+                display={{ base: "none", sm: "block" }}
+                w={{ md: "240px", lg: "440px", xl: "500px" }}
+              >
+                <InputLeftElement
+                  pointerEvents="none"
+                  children={<SearchIcon color="gray.600" />}
+                />
+                <Input
+                  type="text"
+                  placeholder="Try Saree, Kurti or Search by product Code"
+                />
+              </InputGroup>
+            </Stack>
           </HStack>
-          <Flex alignItems={'center'}>
-            <Button
-              variant={'solid'}
-              colorScheme={'teal'}
-              size={'sm'}
-              mr={4}
-              leftIcon={<AddIcon />}>
-              Action
-            </Button>
+          <Flex alignItems={"center"} spacing={{ sm: "2" }}>
             <Menu>
               <MenuButton
                 as={Button}
-                rounded={'full'}
-                variant={'link'}
-                cursor={'pointer'}
-                minW={0}>
-                <Avatar
-                  size={'sm'}
-                  src={
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                  }
-                />
+                rounded={"full"}
+                variant={"link"}
+                cursor={"pointer"}
+                p={"4"}
+                
+              >
+                <Text
+                  display={{ base: "none", md: "block" }}
+                  pr={{ sm: "60px" }}
+                  w={{ md: "2px" }}
+                  mr={"55px"}
+                >
+                  Download App
+                </Text>
               </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
+              <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
+                <MenuItem>Sign Up</MenuItem>
                 <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
+                <MenuItem>My Orders</MenuItem>
               </MenuList>
             </Menu>
+            <Text height={"100%"} width={1} backgroundColor={"#909090"}></Text>
+            <Text
+              w={"137px"}
+              display={{ base: "none", md: "block" }}
+            >
+              Become a Supplier
+            </Text>
+            <Spacer />
+
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={"full"}
+                variant={"link"}
+                cursor={"pointer"}
+                p={"4"}
+                onMouseEnter={onOpen}
+                onMouseLeave={onClose}
+              >
+                <Text
+                  display={{ base: "none", md: "block" }}
+                  pr={{ sm: "60px" }}
+                  // border={"1px solid"}
+                  w={{ md: "2px" }}
+                >
+                  Profile
+                </Text>
+              </MenuButton>
+              <MenuList>
+                <MenuItem>Sign Up</MenuItem>
+                <MenuDivider />
+                <MenuItem>My Orders</MenuItem>
+              </MenuList>
+            </Menu>
+            <BsCart2
+              size={"30px"}
+              display={{ base: "block" }}
+              cursor={"pointer"}
+              mr={{ md: "510px" }}
+            />
           </Flex>
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
@@ -102,8 +174,6 @@ export default function Navbar() {
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }
