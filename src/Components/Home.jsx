@@ -14,6 +14,8 @@ import {
   useColorModeValue,
   HStack,
   Divider,
+  Grid,
+  Spacer,
 } from "@chakra-ui/react";
 
 import { FaGooglePlay } from "react-icons/fa";
@@ -25,7 +27,8 @@ export default function CallToActionWithVideo() {
         maxW={"7xl"}
         border={"1px"}
         borderColor={"rgb(249, 249, 249)"}
-        mt={"80px"}
+        mt={"180px"}
+        // pt={'120px'}
         h={"470px"}
         bg={"rgb(249, 249, 249)"}
       >
@@ -136,19 +139,108 @@ export default function CallToActionWithVideo() {
         </Flex>
       </Container>
 
-      <Container maxW={"7xl"}  height={'68vh'} 
-      bgImage="url('https://images.meesho.com/images/marketing/1649759774600.jpg')" mt={'50px'}
+      <Container
+        maxW={"7xl"}
+        height={"68vh"}
+        bgImage="url('https://images.meesho.com/images/marketing/1649759774600.jpg')"
+        mt={"50px"}
       >
-        <Image src="https://images.meesho.com/images/marketing/1649760442043.webp" pt={'100px'} w={'420px'} cursor={'pointer'}/>
-        <Image src="https://images.meesho.com/images/marketing/1649760423313.webp" mt={'-300px'} pl={'440px'} w={'820px'} h={'300px'} cursor={'pointer'}/>
-        <Image src="https://images.meesho.com/images/marketing/1649759799809.webp" mt={'-300px'} ml={'850px'} w={'390px'} h={'300px'} cursor={'pointer'}/>
+        <Image
+          src="https://images.meesho.com/images/marketing/1649760442043.webp"
+          pt={"50px"}
+          w={"420px"}
+          cursor={"pointer"}
+        />
+        <Image
+          src="https://images.meesho.com/images/marketing/1649760423313.webp"
+          mt={"-300px"}
+          pl={"440px"}
+          w={"820px"}
+          h={"300px"}
+          cursor={"pointer"}
+        />
+        <Image
+          src="https://images.meesho.com/images/marketing/1649759799809.webp"
+          mt={"-300px"}
+          ml={"850px"}
+          w={"390px"}
+          h={"300px"}
+          cursor={"pointer"}
+        />
       </Container>
 
-      <Flex maxW={"7xl"}  height={'68vh'} 
-      bgImage="url('https://images.meesho.com/images/marketing/1664343269674.jpg')" mt={'50px'} backgroundRepeat={'no-repeat'} ml={'208px'} bgSize={'100%'}>
-        
-      </Flex>
+      {<Cont />}
 
+      {<Cont1/>}
     </div>
   );
+}
+
+
+
+const Cont = () => {
+  return (
+    <container maxW={"7xl"} mt={"50px"} height={"68vh"}>
+      <Image
+        src="https://images.meesho.com/images/marketing/1664343269674.jpg"
+        ml={"120px"}
+        w={"container.xl"}
+        mt={"80px"}
+      />
+
+      <Image
+        src="https://images.meesho.com/images/marketing/1664368165450.webp"
+        w={"180px"}
+        height={"80px"}
+        mt={"-356px"}
+        ml={"255px"}
+        cursor={"pointer"}
+      />
+
+      <Flex h={"400px"} w={"225px"} ml={"600px"} mt={"-256px"} gap={"20px"} cursor={'pointer'}>
+        <Image
+          src={"https://images.meesho.com/images/marketing/1649760808952.webp"}
+        />
+
+        <Image
+          src={"https://images.meesho.com/images/marketing/1649760703179.webp"}
+        />
+
+        <Image
+          src={"https://images.meesho.com/images/marketing/1649760786763.webp"}
+        />
+      </Flex>
+
+          <Flex ml={'650px'} w={'180px'} gap={'80px'} cursor={'pointer'}  h={'60px'}>
+        <Image
+          src={"https://images.meesho.com/images/marketing/1664364866805.webp"}
+         
+        />
+        <Image
+          src={"https://images.meesho.com/images/marketing/1664364866805.webp"}
+        />
+        <Image
+          src={"https://images.meesho.com/images/marketing/1664364866805.webp"}
+        />
+      </Flex>
+    </container>
+  );
+};
+
+
+const Cont1=()=>{
+  return(
+    <Container maxW={"7xl"} mt={"140px"} height={"65vh"}>
+      <Image src={'https://images.meesho.com/images/pow/downloadBannerDesktop.webp'} 
+      w={"container.xl"}
+      mt={"80px"}/>
+      <Text mt={'-500px'} color={'rgb(85, 133, 248)'} fontWeight={700} fontSize={'32px'} lineHeight={'40px'} fontFamily={"sans-serif"} ml={'845px'}>Become a Reseller and</Text>
+      <Text color={'rgb(244,51,151)'} ml={'582px'} fontWeight={700} fontSize={'48px'} lineHeight={'52px'} fontFamily={"sans-serif"}>Start your Online Business</Text>
+      <Text color={'rgb(244,51,151)'} ml={'718px'} fontWeight={700} fontSize={'48px'} lineHeight={'52px'} fontFamily={"sans-serif"}> with zero investment</Text>
+      <Grid templateColumns={'repeat(2,1fr)'} w={'380px'} ml={'808px'} gap={4} mt={'60px'} >
+      <Image src="https://images.meesho.com/images/pow/playstoreIcon.webp" h={'50px'} borderRadius={'5px'} cursor={'pointer'}/>
+      <Image src="https://images.meesho.com/images/pow/appstoreIcon.webp" h={'50px'} borderRadius={'5px'} cursor={'pointer'}/>
+      </Grid>
+    </Container>
+  )
 }

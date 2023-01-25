@@ -30,8 +30,10 @@ import {
   SearchIcon,
 } from "@chakra-ui/icons";
 import { BsCart2, BsPhone } from "react-icons/bs";
+import Navbar2 from "./Navbar2";
 
 // import {logo} from "../public/images/logo.png"
+
 
 const Links = ["Dashboard", "Projects", "Profile"];
 
@@ -64,6 +66,7 @@ export default function Navbar() {
         borderBottom={'1px'}
         borderBottomColor={'gray.300'}
         h={'80px'}
+        position={'fixed'} zIndex={'sticky'}top={0}
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
@@ -173,7 +176,10 @@ export default function Navbar() {
             </Stack>
           </Box>
         ) : null}
+
       </Box>
+      <Navbar2/>
+
     </>
   );
 }
