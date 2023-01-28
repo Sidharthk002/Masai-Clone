@@ -17,8 +17,8 @@ import {
   Grid,
   Spacer,
 } from "@chakra-ui/react";
-
 import { FaGooglePlay } from "react-icons/fa";
+import Sort from "./Sort";
 
 export default function CallToActionWithVideo() {
   return (
@@ -172,6 +172,10 @@ export default function CallToActionWithVideo() {
       {<Cont />}
 
       {<Cont1/>}
+
+      {
+        <Sort/>
+      }
     </div>
   );
 }
