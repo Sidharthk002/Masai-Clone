@@ -18,13 +18,13 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import { FaGooglePlay } from "react-icons/fa";
-import Sort from "./Sort";
+
 
 export default function CallToActionWithVideo() {
   return (
     <div >
       <Container
-        maxW={"7xl"}
+        maxWidth={"7xl"}
         border={"1px"}
         borderColor={"rgb(249, 249, 249)"}
         mt={"180px"}
@@ -113,7 +113,7 @@ export default function CallToActionWithVideo() {
         </Stack>
       </Container>
 
-      <Container maxW={"7xl"} marginTop={"50px"}>
+      <Container maxWidth={"7xl"} marginTop={"50px"}>
         <Flex justify={"center"}>
           <Text
             style={{
@@ -140,7 +140,7 @@ export default function CallToActionWithVideo() {
       </Container>
 
       <Container
-        maxW={"7xl"}
+        maxWidth={"7xl"}
         height={"68vh"}
         bgImage="url('https://images.meesho.com/images/marketing/1649759774600.jpg')"
         mt={"50px"}
@@ -172,10 +172,6 @@ export default function CallToActionWithVideo() {
       {<Cont />}
 
       {<Cont1/>}
-
-      {
-        <Sort/>
-      }
     </div>
   );
 }
@@ -184,7 +180,7 @@ export default function CallToActionWithVideo() {
 
 const Cont = () => {
   return (
-    <container maxW={"7xl"} mt={"50px"} height={"68vh"}>
+    <Container maxWidth={"7xl"} mt={"50px"} height={"68vh"}>
       <Image
         src="https://images.meesho.com/images/marketing/1664343269674.jpg"
         ml={"120px"}
@@ -227,14 +223,14 @@ const Cont = () => {
           src={"https://images.meesho.com/images/marketing/1664364866805.webp"}
         />
       </Flex>
-    </container>
+    </Container>
   );
 };
 
 
 const Cont1=()=>{
   return(
-    <Container maxW={"7xl"} mt={"140px"} height={"65vh"}>
+    <Container maxWidth={"7xl"} mt={"140px"} height={"65vh"}>
       <Image src={'https://images.meesho.com/images/pow/downloadBannerDesktop.webp'} 
       w={"container.xl"}
       mt={"80px"}/>

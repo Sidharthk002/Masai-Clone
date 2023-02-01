@@ -31,7 +31,9 @@ import {
 } from "@chakra-ui/icons";
 import { BsCart2, BsPhone } from "react-icons/bs";
 import Navbar2 from "./Navbar2";
-
+import Home from './Home'
+import Sort from "./Sort";
+import { useNavigate } from "react-router-dom";
 // import {logo} from "../public/images/logo.png"
 
 
@@ -52,8 +54,12 @@ const NavLink = ({ children }) => (
   </Link>
 );
 
+
+
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+const navigate = useNavigate();
+
 
   return (
     <>
@@ -158,12 +164,15 @@ export default function Navbar() {
                 <MenuItem>My Orders</MenuItem>
               </MenuList>
             </Menu>
+            
             <BsCart2
               size={"30px"}
               display={{ base: "block" }}
               cursor={"pointer"}
               mr={{ md: "510px" }}
+              onClick={()=>navigate("/cart")}
             />
+        
           </Flex>
         </Flex>
 
@@ -179,7 +188,8 @@ export default function Navbar() {
 
       </Box>
       <Navbar2/>
-
+      <Home/>
+      <Sort/>
     </>
   );
 }

@@ -1,16 +1,11 @@
-import { Cart } from "./Components/Cart";
-import Navbar from "./Components/Navbar";
-// import Home from './Components/Home'
-import Sort from "./Components/Sort";
+import AllRoute from "./AllRoutes/AllRoute";
 function App() {
   return (
     <div>
-      
-      <Cart/>
+      <AllRoute/>
     </div>
   );
 }
 
 export default App;
-// <Navbar/> 
-// <Home/>
+
